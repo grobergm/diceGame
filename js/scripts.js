@@ -7,15 +7,6 @@ var gameTracker=
   rollArray:[]
 }
 
-// function that generates random number and returns the number
-// function changeTurn(turn){
-//   if(turn==="p1"){
-//     return "p2";
-//   } else if (turn==="p1"){
-//     return "p1";
-//   }
-// }
-
 function rollDice(turn){
   var result = Math.ceil(Math.random()*6);
   console.log("result is"+ result)
