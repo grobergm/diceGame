@@ -7,7 +7,8 @@ function Game(){
 }
 
 Game.prototype.turnChanger=function(){
-  if(this.turn<6){
+  this.rollArray=[];
+  if(this.turn<this.playerArray.length){
     this.turn++
   } else{
     this.turn=1;
@@ -23,15 +24,17 @@ Game.prototype.rollDice=function(){
   console.log("Roll Dice Hit "+ rollResult)
   if(rollResult===1){
     this.turnChanger();
-    this.clearArray();
   } else {
     this.rollArray.push(rollResult);
   }
 }
 
-Game.prototype.clearArray=function(){
-  console.log("Clear Array hit")
-  this.rollArray=[]
+Game.prototype.addScore=function(){
+  var roundScore=0;
+  this.rollArray.forEach(function(roll){
+    roundScore+=roll;
+  });
+  this.playerArray[this.turn-1].score+=roundScore;
 }
 
 function Player(name){
@@ -41,8 +44,13 @@ function Player(name){
 
 var newGame= new Game();
 var newPlayer= new Player("Matt");
+var newPlayer2= new Player("Joe");
+var newPlayer3= new Player("Mark");
+
 
 newGame.addPlayer(newPlayer);
+newGame.addPlayer(newPlayer2);
+newGame.addPlayer(newPlayer3);
 
 
 
