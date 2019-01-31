@@ -1,11 +1,4 @@
 
-var gameTracker=
-{
-  turn: 1,
-  player1Score: 0,
-  player2Score: 0,
-  rollArray:[]
-}
 
 function Game(){
   this.turn=1;
@@ -25,14 +18,41 @@ Game.prototype.addPlayer=function(playerName){
   this.playerArray.push(new Player(playerName));
 }
 
+Game.prototype.rollDice=function(){
+  var rollResult = Math.ceil(Math.random()*6);
+  console.log("Roll Dice Hit "+ rollResult)
+  if(rollResult===1){
+    this.turnChanger();
+    this.clearArray();
+  } else {
+    this.rollArray.push(rollResult);
+  }
+}
+
+Game.prototype.clearArray=function(){
+  console.log("Clear Array hit")
+  this.rollArray=[]
+}
+
 function Player(name){
   this.name=name;
   this.score=0;
 }
 
-var testName="Matt";
 var newGame= new Game();
-newGame.addPlayer(testName);
+var newPlayer= new Player("Matt");
+
+newGame.addPlayer(newPlayer);
+
+
+
+var gameTracker=
+{
+  turn: 1,
+  player1Score: 0,
+  player2Score: 0,
+  rollArray:[]
+}
 
 function rollDice(turn){
   var result = Math.ceil(Math.random()*6);
