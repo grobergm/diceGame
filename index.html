@@ -12,7 +12,21 @@
     <script src="js/scripts.js"></script>
   </head>
   <body>
-    <div class="container">
+    <div id="titleDisplay" class="container">
+      <h1>Pig Dice</h1>
+      <form id="nameForm">
+        <div class="form-row">
+          <div class="col">
+            <input class="form-control" id="nameInput" type="text" placeholder="Enter your Name">
+          </div>
+          <div class="col">
+            <button class="btn btn-block btn-primary" type="submit">Add Player</button>
+          </div>
+        </div>
+      </form>
+      <button id="startGame" class="btn btn-block btn-danger"type="button">Start Game!</button>
+    </div>
+    <div id="gameDisplay" class="container">
       <div id="p1Display" class="card">
         <h3>Player One</h3>
         <p id="p1Score">0</p>

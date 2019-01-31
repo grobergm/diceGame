@@ -1,3 +1,11 @@
+body{
+  background-image: url("../imgs/cutePig.jpeg");
+  background-size:cover;
+  background-repeat: no-repeat;
+  height: 100em;
+  color: white;
+}
+
 .container{
   text-align: center;
 }
@@ -17,4 +25,15 @@
   margin-top:20px;
   width:250px;
   display:none;
+}
+
+#titleDisplay{
+}
+
+#gameDisplay{
+  display: none;
+}
+
+#nameForm{
+  margin-bottom:10px;
 }
