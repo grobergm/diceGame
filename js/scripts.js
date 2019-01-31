@@ -7,6 +7,27 @@ var gameTracker=
   rollArray:[]
 }
 
+function Game(players){
+  this.turn=1;
+  this.playerArray=players;
+  this.rollArray=[];
+}
+
+Game.prototype.turnChanger=function(){
+  if(this.turn<6){
+    this.turn++
+  } else{
+    this.turn=1;
+  }
+}
+
+
+function Player(name){
+  this.name=name;
+  this.score=0;
+}
+
+
 function rollDice(turn){
   var result = Math.ceil(Math.random()*6);
   console.log("result is"+ result)
