@@ -1,3 +1,20 @@
 .container{
   text-align: center;
 }
+#p1Display{
+  float:left;
+}
+#p2Display{
+  float:right;
+}
+
+.card{
+  padding:20px;
+  margin-top:20px;
+}
+
+#diceDisplay img{
+  margin-top:20px;
+  width:250px;
+  display:none;
+}

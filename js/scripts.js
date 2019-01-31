@@ -15,9 +15,8 @@ function rollDice(turn){
   } else {
     gameTracker.turn += 1;
     clearArray();
-
   }
-  console.log(gameTracker.turn);
+  return result;
 }
 
 function clearArray(){
@@ -35,17 +34,32 @@ function addScore(array){
     console.log("p1")
   } else if(gameTracker.turn%2===0) {
     gameTracker.player2Score += score;
+    if(gameTracker.player2Score>= 100){
+     alert("Player 2 Wins!");
+    }
     console.log("p2")
   }
+  checkVictory();
   gameTracker.turn += 1;
   clearArray();
+}
 
+function checkVictory(){
+  if(gameTracker.player1Score>= 100){
+     alert("Player 1 Wins!");
+  }
+  if(gameTracker.player2Score>=100){
+    alert("Player 2 Wins!");
+  }
+  if ((gameTracker.player1Score>=100)||(gameTracker.player2Score>=100)){
+    gameTracker.player1Score=0;
+    gameTracker.player2Score=0;
+  }
 }
 
 
 
 $(document).ready(function(){
-
   function displayTurn(){
     if (gameTracker.turn % 2 !==0){
       $("#turnDisplay").text("Player 1")
@@ -65,6 +79,25 @@ $(document).ready(function(){
   }
   $("#rollBtn").click(function(){
     var diceResult= rollDice(gameTracker.turn);
+    $("#diceDisplay img").hide();
+    if(diceResult===1){
+      $("#grin").show();
+    }
+    if(diceResult===2){
+      $("#two").show();
+    }
+    if(diceResult===3){
+      $("#three").show();
+    }
+    if(diceResult===4){
+      $("#four").show();
+    }
+    if(diceResult===5){
+      $("#five").show();
+    }
+    if(diceResult===6){
+      $("#six").show();
+    }
   });
 
   $("#scoreBtn").click(function(){
