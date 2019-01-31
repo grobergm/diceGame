@@ -4,41 +4,6 @@ var gameTracker=
   turn: 1,
   player1Score: 0,
   player2Score: 0,
-<<<<<<< HEAD
-  player2Array:[]
-}
-
-
-function rollDice(game){
-  var diceResult= Math.ceil(Math.random()*6);
-  if (diceResult===1){
-    clearArray(game.turn);
-    resetTurn(game.turn)
-  } else {
-    if (game.turn==="p1"){
-      game.player1Array.push(diceResult);
-    } else if (game.turn==="p2"){
-      game.player2Array.push(diceResult);
-    }
-  }
-
-}
-
-
-function clearArray(turn){
-  if (turn==="p1"){
-    gameTracker.player1Array=[];
-  } else if(turn==="p2") {
-    gameTracker.player2Array=[];
-  }
-};
-
-function resetTurn(turn){
-  if (turn==="p1"){
-    gameTracker.turn="p2";
-  } else if(turn==="p2") {
-    gameTracker.turn="p1"
-=======
   rollArray:[]
 }
 
@@ -50,6 +15,7 @@ function rollDice(turn){
   } else {
     gameTracker.turn += 1;
     clearArray();
+
   }
   console.log(gameTracker.turn);
 }
@@ -70,46 +36,44 @@ function addScore(array){
   } else if(gameTracker.turn%2===0) {
     gameTracker.player2Score += score;
     console.log("p2")
->>>>>>> fixed
   }
   gameTracker.turn += 1;
   clearArray();
+
 }
 
-<<<<<<< HEAD
-function addScore(turn){
-  var score = 0;
-  if (turn === "p1") {
-    gameTracker.player1Array.forEach(function(roll){
-      score += roll;
-=======
+
+
 $(document).ready(function(){
+
+  function displayTurn(){
+    if (gameTracker.turn % 2 !==0){
+      $("#turnDisplay").text("Player 1")
+    } else if (gameTracker.turn % 2 ===0){
+        $("#turnDisplay").text("Player 2")
+    }
+  };
+
+  function displayRoll(){
+    var rollString= gameTracker.rollArray.join(", ");
+    $("#rollDisplay").text(rollString);
+  };
+
+  function displayPlayerScore(){
+    $("#p1Score").text(gameTracker.player1Score);
+    $("#p2Score").text(gameTracker.player2Score);
+  }
   $("#rollBtn").click(function(){
     var diceResult= rollDice(gameTracker.turn);
-  })
+  });
+
   $("#scoreBtn").click(function(){
     addScore(gameTracker.rollArray);
->>>>>>> fixed
   })
-  } else if (turn === "p2") {
-      gameTracker.player2Array.forEach(function(roll){
-        score += roll;
-    });
-  }
-}
+  $("button").click(function(){
+    displayPlayerScore();
+    displayTurn();
+    displayRoll();
+  })
 
-// function(){
-//   if (gameTracker.turn == "p1") {
-//     addScore(gameTracker.player1Array);
-//   }
-//   if (gameTracker.turn == "p2") {
-//     addScore(gameTracker.player2Array);
-//   }
-// }
-
-
-
-$(document).ready(function(){
-  $("#rollBtn").click(rollDice(gameTracker));
-  $("#scoreBtn").click(addScore(gameTracker.turn))
 });

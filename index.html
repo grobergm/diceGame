@@ -12,8 +12,14 @@
     <script src="js/scripts.js"></script>
   </head>
   <body>
-    <h1 id="title">Pig Dice</h1>
-    <button id="rollBtn"type="button">Roll</button>
-    <button id="scoreBtn" type="button">Hold</button>
+    <div class="container">
+      <h1 id="title">Pig Dice</h1>
+      <h3>Turn: <span id="turnDisplay">Player 1</span></h3>
+      <h3>Player One: <span id="p1Score"></span> </h3>
+      <h3>Player Two: <span id="p2Score"></span> </h3>
+      <h3>Rolls: <span id="rollDisplay"></span></h3>
+      <button class="btn btn-block btn-danger" id="rollBtn"type="button">Roll</button>
+      <button class="btn btn-block btn-success" id="scoreBtn" type="button">Hold</button>
+    </div>
   </body>
 </html>
