@@ -7,9 +7,9 @@ var gameTracker=
   rollArray:[]
 }
 
-function Game(players){
+function Game(){
   this.turn=1;
-  this.playerArray=players;
+  this.playerArray=[];
   this.rollArray=[];
 }
 
@@ -21,12 +21,18 @@ Game.prototype.turnChanger=function(){
   }
 }
 
+Game.prototype.addPlayer=function(playerName){
+  this.playerArray.push(new Player(playerName));
+}
 
 function Player(name){
   this.name=name;
   this.score=0;
 }
 
+var testName="Matt";
+var newGame= new Game();
+newGame.addPlayer(testName);
 
 function rollDice(turn){
   var result = Math.ceil(Math.random()*6);
