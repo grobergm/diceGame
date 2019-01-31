@@ -12,41 +12,39 @@
     <script src="js/scripts.js"></script>
   </head>
   <body>
-    <div id="titleDisplay" class="container">
+    <div class="container">
       <h1>Pig Dice</h1>
-      <form id="nameForm">
-        <div class="form-row">
-          <div class="col">
-            <input class="form-control" id="nameInput" type="text" placeholder="Enter your Name">
+      <div id="titleDisplay">
+        <form id="nameForm">
+          <div class="form-row">
+            <div class="col">
+              <input class="form-control" id="nameInput" type="text" placeholder="Enter your Name">
+              <div class="invalid-feedback">
+                Please enter yo name FOO!
+              </div>
+            </div>
+            <div class="col">
+              <button class="btn btn-block btn-primary" type="submit">Add Player</button>
+            </div>
           </div>
-          <div class="col">
-            <button class="btn btn-block btn-primary" type="submit">Add Player</button>
-          </div>
+        </form>
+        <button id="startGame" class="btn btn-block btn-danger"type="button">Start Game!</button>
+      </div>
+      <div id="playerDisplay" class="row">
+      </div>
+      <div id="gameDisplay">
+        <h3>Turn: <span id="turnDisplay"></span></h3>
+        <h3>Rolls: <span id="rollDisplay"></span></h3>
+        <button class="btn btn-lg btn-danger" id="rollBtn"type="button">Roll</button>
+        <button class="btn btn-lg btn-success" id="scoreBtn" type="button">Hold</button> <br>
+        <div id="diceDisplay">
+          <img id="grin" src="imgs/pigGrin.jpeg">
+          <img id="two" src="imgs/d2.png">
+          <img id="three"src="imgs/d3.png">
+          <img id="four" src="imgs/d4.png">
+          <img id="five"src="imgs/d5.png">
+          <img id="six" src="imgs/d6.png">
         </div>
-      </form>
-      <button id="startGame" class="btn btn-block btn-danger"type="button">Start Game!</button>
-    </div>
-    <div id="gameDisplay" class="container">
-      <div id="p1Display" class="card">
-        <h3>Player One</h3>
-        <p id="p1Score">0</p>
-      </div>
-      <div id="p2Display" class="card">
-        <h3>Player Two</h3>
-        <p id="p2Score">0</p>
-      </div>
-      <h1 id="title">Pig Dice</h1>
-      <h3>Turn: <span id="turnDisplay">Player 1</span></h3>
-      <h3>Rolls: <span id="rollDisplay"></span></h3>
-      <button class="btn btn-lg btn-danger" id="rollBtn"type="button">Roll</button>
-      <button class="btn btn-lg btn-success" id="scoreBtn" type="button">Hold</button> <br>
-      <div id="diceDisplay">
-        <img id="grin" src="imgs/pigGrin.jpeg">
-        <img id="two" src="imgs/d2.png">
-        <img id="three"src="imgs/d3.png">
-        <img id="four" src="imgs/d4.png">
-        <img id="five"src="imgs/d5.png">
-        <img id="six" src="imgs/d6.png">
       </div>
     </div>
   </body>

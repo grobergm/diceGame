@@ -17,6 +17,7 @@ body{
 }
 
 .card{
+  color:black;
   padding:20px;
   margin-top:20px;
 }
@@ -24,6 +25,8 @@ body{
 #diceDisplay img{
   margin-top:20px;
   width:250px;
+  background-color:pink;
+  border-radius:32px;
   display:none;
 }
 
