@@ -45,15 +45,18 @@ Game.prototype.addScore=function(){
 Game.prototype.checkVictory=function(){
   this.playerArray.forEach(function(player){
     if(player.score>=100){
-      alert(player.name + " Is the Winner!");
+      var winningPlayer=player.name.toString();
+      return winningPlayer;
     }
-  })
+  });
 }
 
 
 
 $(document).ready(function(){
   var newGame = new Game();
+  newGame.addPlayer("test");
+  newGame.playerArray[0].score=99;
 
   function displayPlayers(){
     $(".player").hide();
@@ -72,6 +75,11 @@ $(document).ready(function(){
     $("#turnDisplay").text(newGame.playerArray[newGame.turn-1].name)
   };
 
+  function displayVictoryModal(name){
+      $("#winnerName").text(name);
+      $("#victoryModal").modal("show")
+  }
+
   $('#nameForm').submit(function(event){
     event.preventDefault();
     var playerName= $("#nameInput").val();
@@ -79,6 +87,7 @@ $(document).ready(function(){
       $("#nameInput").removeClass("is-invalid");
       newGame.addPlayer(playerName);
       displayPlayers();
+      $("#nameInput").val("");
     } else {
       $("#nameInput").addClass("is-invalid");
     }
@@ -87,8 +96,8 @@ $(document).ready(function(){
   $("#startGame").click(function(){
     $("#titleDisplay").hide();
     $("#gameDisplay").show();
-
   });
+
   $("#rollBtn").click(function(){
     var diceResult= newGame.rollDice();
     displayRoll();
@@ -115,14 +124,12 @@ $(document).ready(function(){
   });
   $("#scoreBtn").click(function(){
     newGame.addScore();
-
     $("#diceDisplay img").hide();
-  })
+  });
   $("button").click(function(){
     displayRoll();
     displayPlayers();
-    newGame.checkVictory();
     displayTurn();
-  })
-
+    displayVictoryModal(newGame.checkVictory())
+  });
 });
