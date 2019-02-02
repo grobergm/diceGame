@@ -3,16 +3,17 @@ body{
   background-size:cover;
   background-repeat: no-repeat;
   height: 100em;
-  color: white;
 }
-
+h1{
+  color: white;
+  font-size:100px;
+  font-family: 'Montserrat', sans-serif;
+}
 .container{
   text-align: center;
 }
-#p1Display{
-  float:left;
-}
-#p2Display{
+
+.float-right{
   float:right;
 }
 
@@ -25,14 +26,13 @@ body{
 }
 
 #diceDisplay img{
-  margin-top:20px;
-  width:250px;
+  width:25%;
   background-color:pink;
   border-radius:32px;
   display:none;
 }
-
-#titleDisplay{
+#diceDisplay .btn{
+  max-width:75%
 }
 
 #gameDisplay{

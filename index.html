@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Pig Dice</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -12,8 +13,8 @@
   </head>
   <body>
     <div class="container">
-      <h1 id="title">Pig Dice</h1>
       <div id="titleDisplay">
+        <h1 id="title">Pig Dice</h1>
         <form id="nameForm">
           <div class="form-row">
             <div class="col">
@@ -29,13 +30,23 @@
         </form>
         <button id="startGame" class="btn btn-block btn-danger"type="button">Start Game!</button>
       </div>
-      <div id="playerDisplay" class="row">
+      <div id="playerDisplay">
       </div>
       <div id="gameDisplay">
-        <h3>Turn: <span id="turnDisplay"></span></h3>
-        <h3>Rolls: <span id="rollDisplay"></span></h3>
-        <button class="btn btn-lg btn-danger" id="rollBtn"type="button">Roll</button>
-        <button class="btn btn-lg btn-success" id="scoreBtn" type="button">Hold</button> <br>
+        <div class="float-right">
+          <h1 id="turn">Turn: <span id="turnDisplay"></span></h1>
+        </div>
+        <h1 id="roll">Rolls: <span id="rollDisplay"></span></h1>
+        <div id="diceDisplay">
+          <img id="grin" src="imgs/pigGrin.jpeg">
+          <img id="two" src="imgs/d2.png">
+          <img id="three"src="imgs/d3.png">
+          <img id="four" src="imgs/d4.png">
+          <img id="five"src="imgs/d5.png">
+          <img id="six" src="imgs/d6.png">
+          <button class="btn btn-lg btn-block btn-danger" id="rollBtn"type="button">Roll</button>
+          <button class="btn btn-lg btn-block btn-success" id="scoreBtn" type="button">Hold</button>
+        </div>
         <div id="diceDisplay">
           <img id="grin" src="imgs/pigGrin.jpeg">
           <img id="two" src="imgs/d2.png">
@@ -44,6 +55,7 @@
           <img id="five"src="imgs/d5.png">
           <img id="six" src="imgs/d6.png">
         </div>
+
       </div>
       <div class="modal fade" id="victoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

@@ -42,21 +42,8 @@ Game.prototype.addScore=function(){
   this.turnChanger();
 }
 
-Game.prototype.checkVictory=function(){
-  this.playerArray.forEach(function(player){
-    if(player.score>=100){
-      var winningPlayer=player.name.toString();
-      return winningPlayer;
-    }
-  });
-}
-
-
-
 $(document).ready(function(){
   var newGame = new Game();
-  newGame.addPlayer("test");
-  newGame.playerArray[0].score=99;
 
   function displayPlayers(){
     $(".player").hide();
@@ -75,9 +62,13 @@ $(document).ready(function(){
     $("#turnDisplay").text(newGame.playerArray[newGame.turn-1].name)
   };
 
-  function displayVictoryModal(name){
-      $("#winnerName").text(name);
-      $("#victoryModal").modal("show")
+  function displayVictoryModal(){
+    newGame.playerArray.forEach(function(player){
+      if (player.score>=100){
+        $("#winnerName").text(player.name);
+        $("#victoryModal").modal("show");
+      }
+    })
   }
 
   $('#nameForm').submit(function(event){
@@ -125,11 +116,11 @@ $(document).ready(function(){
   $("#scoreBtn").click(function(){
     newGame.addScore();
     $("#diceDisplay img").hide();
+    displayVictoryModal();
   });
   $("button").click(function(){
     displayRoll();
     displayPlayers();
     displayTurn();
-    displayVictoryModal(newGame.checkVictory())
   });
 });
