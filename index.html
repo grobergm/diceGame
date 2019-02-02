@@ -29,34 +29,27 @@
           </div>
         </form>
         <button id="startGame" class="btn btn-block btn-danger"type="button">Start Game!</button>
-      </div>
-      <div id="playerDisplay">
+        <div class="playerDisplay row"></div>
       </div>
       <div id="gameDisplay">
-        <div class="float-right">
-          <h1 id="turn">Turn: <span id="turnDisplay"></span></h1>
+        <div class="playerDisplay row"></div>
+        <div class="row">
+          <div class="col" id="diceDisplay">
+            <img id="grin" src="imgs/pigGrin.jpeg">
+            <img id="two" src="imgs/d2.png">
+            <img id="three"src="imgs/d3.png">
+            <img id="four" src="imgs/d4.png">
+            <img id="five"src="imgs/d5.png">
+            <img id="six" src="imgs/d6.png">
+          </div>
+          <div class="col">
+            <button class="gameButton btn btn-lg btn-block btn-danger" id="rollBtn" type="button">Roll</button>
+            <button class="gameButton btn btn-lg btn-block btn-success" id="scoreBtn" type="button">Hold</button>
+          </div>
         </div>
-        <h1 id="roll">Rolls: <span id="rollDisplay"></span></h1>
-        <div id="diceDisplay">
-          <img id="grin" src="imgs/pigGrin.jpeg">
-          <img id="two" src="imgs/d2.png">
-          <img id="three"src="imgs/d3.png">
-          <img id="four" src="imgs/d4.png">
-          <img id="five"src="imgs/d5.png">
-          <img id="six" src="imgs/d6.png">
-          <button class="btn btn-lg btn-block btn-danger" id="rollBtn"type="button">Roll</button>
-          <button class="btn btn-lg btn-block btn-success" id="scoreBtn" type="button">Hold</button>
-        </div>
-        <div id="diceDisplay">
-          <img id="grin" src="imgs/pigGrin.jpeg">
-          <img id="two" src="imgs/d2.png">
-          <img id="three"src="imgs/d3.png">
-          <img id="four" src="imgs/d4.png">
-          <img id="five"src="imgs/d5.png">
-          <img id="six" src="imgs/d6.png">
-        </div>
-
+        <h1 class="row" id="rollDisplay"></h1>
       </div>
+
       <div class="modal fade" id="victoryModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">

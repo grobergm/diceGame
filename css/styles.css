@@ -9,6 +9,10 @@ h1{
   font-size:100px;
   font-family: 'Montserrat', sans-serif;
 }
+h3{
+  font-size:50px;
+  font-family: 'Montserrat', sans-serif;
+}
 .container{
   text-align: center;
 }
@@ -22,17 +26,13 @@ h1{
   padding:20px;
   margin-top:20px;
   margin-right: 10px;
-  width: 150px;
 }
 
 #diceDisplay img{
-  width:25%;
+  width:200px;
   background-color:pink;
   border-radius:32px;
   display:none;
-}
-#diceDisplay .btn{
-  max-width:75%
 }
 
 #gameDisplay{
@@ -41,4 +41,12 @@ h1{
 
 #nameForm{
   margin-bottom:10px;
+}
+
+.gameButton{
+  height:100px;
+}
+
+.currentTurn{
+  background-color:	#d9534f;
 }

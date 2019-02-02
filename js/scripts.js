@@ -47,10 +47,14 @@ $(document).ready(function(){
 
   function displayPlayers(){
     $(".player").hide();
-    newGame.playerArray.forEach(function(player){
-      var appendString="<div class='card player'><h3>"+player.name+"</h3><p>"+player.score+"</p></div>"
-      $("#playerDisplay").append(appendString);
-    })
+    for (var i=0; i<newGame.playerArray.length;i++){
+      var appendString="<div class='card player ";
+      if (newGame.turn===i+1){
+        appendString+='currentTurn';
+      }
+      appendString+="'><h3 class='card-title'>"+newGame.playerArray[i].name+" "+newGame.playerArray[i].score+"</h3></div>";
+      $(".playerDisplay").append(appendString);
+    }
   };
 
   function displayRoll(){
@@ -85,8 +89,11 @@ $(document).ready(function(){
   });
 
   $("#startGame").click(function(){
-    $("#titleDisplay").hide();
-    $("#gameDisplay").show();
+    if(newGame.playerArray.length>0){
+      $("#titleDisplay").hide();
+      $('#grin').show();
+      $("#gameDisplay").show();
+    }
   });
 
   $("#rollBtn").click(function(){
