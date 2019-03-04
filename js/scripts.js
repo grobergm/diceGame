@@ -48,7 +48,7 @@ $(document).ready(function(){
   function displayPlayers(){
     $(".player").hide();
     for (var i=0; i<newGame.playerArray.length;i++){
-      var appendString="<div class='card player ";
+      var appendString="<div class='card player magictime puffIn ";
       if (newGame.turn===i+1){
         appendString+='currentTurn';
       }
@@ -102,22 +102,22 @@ $(document).ready(function(){
     $("#diceDisplay img").hide();
 
     if(diceResult===1){
-      $("#grin").show();
+      $("#grin").show().addClass("magictime foolishIn");
     }
     if(diceResult===2){
-      $("#two").show();
+      $("#two").show().addClass("magictime twisterInUp");
     }
     if(diceResult===3){
-      $("#three").show();
+      $("#three").show().addClass("magictime twisterInUp");
     }
     if(diceResult===4){
-      $("#four").show();
+      $("#four").show().addClass("magictime twisterInUp");
     }
     if(diceResult===5){
-      $("#five").show();
+      $("#five").show().addClass("magictime twisterInUp");
     }
     if(diceResult===6){
-      $("#six").show();
+      $("#six").show().addClass("magictime twisterInUp");
     }
   });
   $("#scoreBtn").click(function(){
